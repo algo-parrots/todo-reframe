@@ -7,8 +7,8 @@ run: ## Run the application
 
 test: ## Run tests
 	lein clean
-	lein doo phantom test once
+	lein doo node test once
 
 auto_test: ## Run the tests every time the code changes
 	lein clean
-	lein doo phantom test auto
+	lein doo node test auto
