@@ -3,6 +3,12 @@
             [todo-app.subs :as subs]
             ))
 
+(defn todo
+  [todo-data]
+  ^{:key (random-uuid)}
+  [:div todo-data])
+
 (defn main-panel []
-  (let [name (re-frame/subscribe [::subs/name])]
-    [:div "Hello from " @name " Parrot"]))
+  (let [todos (re-frame/subscribe [::subs/todos])]
+    [:div
+     (map todo @todos)]))
